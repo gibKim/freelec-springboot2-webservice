@@ -1,14 +1,16 @@
 buildscript {
-    ext{
+    ext {
         springBootVersion = '2.1.7.RELEASE'
     }
     repositories {
-        mavenCentral()
         jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-
     }
 }
 
@@ -17,13 +19,33 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
-dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:sprinAg-boot-starter-test')
-}
 group 'com,jojodu.book'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+    compile('com.h2database:h2')
+    compile('org.projectlombok:lombok:1.18.20')
+    compile('org.projectlombok:lombok')
+    compile 'junit:junit:4.13.1'
+    compile('org.springframework.session:spring-session-jdbc')
+    testCompile('org.springframework.security:spring-security-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform()
+}
+

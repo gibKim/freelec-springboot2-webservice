@@ -17,10 +17,10 @@ notifications:
   email:
     recipients:
       - gbkim0909@gmail.com
-      -
+
 before_install:
   - chmod +x gradlew
-  -
+
 before_deploy:
   - zip -r freelec-springboot2-webservice *
   - mkdir -p deploy

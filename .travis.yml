@@ -42,7 +42,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: gibkim-springboot2-build
-    key: freelec-springboo2-webservice.zip
+    key: freelec-springboot2-webservice.zip
 
     bundle_type: zip
     application: freelec-codedeploy

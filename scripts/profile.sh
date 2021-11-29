@@ -5,13 +5,17 @@ function find_idle_profile() {
 
   if [${RESPONSE_CODE} -ge 400 ]
 
-  then CURRENT_PROFILE=real2
-  else CURRENT_PROFILE=($curl -s http://localhost/profile)
-  find_idle_profile
+  then
+    CURRENT_PROFILE=real2
+  else
+    CURRENT_PROFILE=($curl -s http://localhost/profile)
+    find_idle_profile
 
   if[ ${CURRENT_PROFILE} == real1 ]
-  then IDLE_PROFILE=real2
-  else IDLE_PROFILE=real1
+  then
+    IDLE_PROFILE=real2
+  else
+    IDLE_PROFILE=real1
   fi
   echo "${IDLE_PROFILE}"
 
@@ -20,10 +24,12 @@ function find_idle_profile() {
 function  find_idle_port() {
   IDLE_PROFILE=${find_idle_profile)
 
-  if[ ${IDLE_PROFILE} == real1]
-  then echo "8081"
-  else echo "8082"
+  if [ ${IDLE_PROFILE} == real1 ]
+  then
+    echo "8081"
+  else
+    echo "8082"
   fi
-}
+  }
 }
 

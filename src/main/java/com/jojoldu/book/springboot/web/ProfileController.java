@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.web.dto;
+package com.jojoldu.book.springboot.web;
 
 import java.util.Arrays;
 import java.util.List;

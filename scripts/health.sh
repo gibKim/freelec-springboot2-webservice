@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-ABSPATH=$(readlink -m)
+ABSPATH=$(readlink -m ./)
 ABSDIR=$(dirname $ABSPATH)
 source ${ABSDIR}/profile.sh
 source ${ABSDIR}/switch.sh
